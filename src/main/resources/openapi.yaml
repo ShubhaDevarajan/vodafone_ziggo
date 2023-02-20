@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: OpenAPI definition
+  description: OpenAPI definition
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/swagger-ui/index.html
+paths:
+  /v1/orders:
+    get:
+      summary: Get all orders
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    email:
+                      type: string
+                      format: email
+    post:
+      summary: Create a new order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productId:
+                  type: string
+                emailId:
+                  type: string
+      responses:
+        201:
+          description: Created

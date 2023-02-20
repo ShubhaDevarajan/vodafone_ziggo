@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "5e329d80-c8ef-4268-896f-31b3388c1228",
+		"name": "postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "v1/orders",
+			"item": [
+				{
+					"name": "get All Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"productId\": \"veniam nostrud exercitation pariatur sed\",\n    \"orderId\": \"amet\",\n    \"email\": \"id cillum sit\",\n    \"firstname\": \"irure proident\",\n    \"lastName\": \"esse dolore tempor\"\n  },\n  {\n    \"productId\": \"eu et minim consectetur proident\",\n    \"orderId\": \"Lorem Ut elit\",\n    \"email\": \"reprehenderit est amet\",\n    \"firstname\": \"est minim\",\n    \"lastName\": \"ut pariatur esse dolor\"\n  }\n]"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"orders"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errorMessage\": \"Lorem\",\n  \"requestedURI\": \"co\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"orders"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errorMessage\": \"Lorem\",\n  \"requestedURI\": \"co\"\n}"
+						}
+					]
+				},
+				{
+					"name": "create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\": \"P2\",\n  \"email\": \"janet.weaver@reqres.in\"\n}\n/**\nValid emails:\n    janet.weaver@reqres.in\n    emma.wong@reqres.in\n    eve.holt@reqres.in\n    charles.morris@reqres.in\n    tracey.ramos@reqres.in\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productId\": \"sed consequat laboris\",\n  \"email\": \"elit occaecat\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"orderId\": \"Duis sed deserunt\",\n  \"order\": {\n    \"productId\": \"eu repre\",\n    \"email\": \"sint\"\n  }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productId\": \"sed consequat laboris\",\n  \"email\": \"elit occaecat\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"orders"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errorMessage\": \"Lorem\",\n  \"requestedURI\": \"co\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productId\": \"sed consequat laboris\",\n  \"email\": \"elit occaecat\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"orders"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errorMessage\": \"Lorem\",\n  \"requestedURI\": \"co\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

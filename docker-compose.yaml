@@ -1,0 +1,35 @@
+version: '3.1'
+services:
+  db:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    restart: always
+    command: --init-file /data/application/init.sql
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./mysql/init.sql:/data/application/init.sql
+    networks:
+      - vodafoneziggo
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user1
+      MYSQL_PASSWORD: password1
+      MYSQL_DATABASE: vodafone_ziggo
+
+  assignment:
+    image: assignment:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - vodafoneziggo
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/vodafone_ziggo
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+networks:
+  vodafoneziggo:
