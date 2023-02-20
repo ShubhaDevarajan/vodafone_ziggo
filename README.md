@@ -47,7 +47,7 @@ Now the application will be running in localhost:8080.
 * Run `docker exec -it {CONTAINER_ID} bash` to login to the container.
 * Run `mysql -p` to open the MySQL console.
 * Enter `root` as the password to enter as a root user.
-* Find the database vodafone_ziggo and 2 tables orders and users with the appropriate data.
+* Find the database `vodafone_ziggo` and 2 tables `orders` and `users` with the appropriate data.
 
 ## Author
 
