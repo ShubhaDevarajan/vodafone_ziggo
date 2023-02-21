@@ -21,11 +21,11 @@
 
 To build the docker image,
 
-docker build -t assignment .
+```docker build -t assignment .```
 
 To run the application along with MySQL,
 
-docker-compose up
+```docker-compose up```
 
 
 Now the application will be running in localhost:8080.
@@ -37,17 +37,17 @@ Now the application will be running in localhost:8080.
 
 ### Postman collection
 
-* Use the postman_collection.json present in the root folder of the project.
-* Open postman application and import the collection using the postman_collection.json file.
+* Use the `postman_collection.json` present in the root folder of the project.
+* Open postman application and import the collection using the `postman_collection.json` file.
 * We can see 2 APIs(to create a single order and get all the created orders)
 
 ### To view the data of MySQL,
-* Run docker ps to list the running docker processes.
+* Run `docker ps` to list the running docker processes.
 * Find the container id corresponding to the MySQL.
-* Run docker exec -it {CONTAINER_ID} bash to login to the container.
-* Run mysql -p to open the MySQL console.
-* Enter root as the password to enter as a root user.
-* Find the database vodafone_ziggo and 2 tables orders and users with the appropriate data.
+* Run `docker exec -it {CONTAINER_ID} bash` to login to the container.
+* Run `mysql -p` to open the MySQL console.
+* Enter `root` as the password to enter as a `root` user.
+* Find the database `vodafone_ziggo` and 2 tables `orders` and `users` with the appropriate data.
 
 ## Author
 
