@@ -45,7 +45,7 @@ public class OrderServiceImpl implements OrderService {
         List<GetOrderResponse> getOrderResponseList = new ArrayList<>();
         List<Orders> orders = orderRepository.findAll();
         if (orders.isEmpty()) {
-            throw new ResourceNotFoundException("Order");
+            throw new ResourceNotFoundException("Orders");
         }
         Map<String, Users> emailToUsers =
                 userService.getAllUsers(orders.stream().map(Orders::getEmail).collect(Collectors.toList())).stream().collect(Collectors.toMap(Users::getEmail, Function.identity()));
